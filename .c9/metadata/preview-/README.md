@@ -1,1 +1,1 @@
-{"filter":false,"title":"[P] /README.md","undoManager":{"mark":0,"position":-1,"stack":[]},"preview":{"path":"/README.md","previewer":"preview.markdown"},"timestamp":1426790202834,"hash":"67452301efcdab8998badcfe10325476c3d2e1f0"}
+{"changed":false,"filter":false,"title":"[P] /README.md","value":"","undoManager":{"mark":0,"position":-1,"stack":[]},"preview":{"path":"/README.md","previewer":"preview.markdown"}}

@@ -1,0 +1,1 @@
+probna = angular.module('probna', []);
