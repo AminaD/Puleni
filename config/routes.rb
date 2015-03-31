@@ -1,6 +1,21 @@
 Rails.application.routes.draw do
-  get 'static_pages/index'
   
+  get 'static_pages/index'
+  get '/programs/', to: 'api/programs#index'
+  get '/trainings/', to: 'api/trainings#index'
+  get '/trainings/:id', to: 'api/trainings#show'
+  post '/trainings/', to: 'api/trainings#create'
+  put '/trainings/:id', to: 'api/trainings#update'
+  delete '/trainings/', to: 'api/trainings#destroy'
+
+
+  
+  
+
+
+#OVJDE KUCAMO GET POST PUT DELETE!!!!!!  
+
+
   # Add the following line
   root 'static_pages#index'
 
@@ -31,18 +46,18 @@ Rails.application.routes.draw do
   #     end
   #   end
   
- 
+    
   # Api definition
-  namespace :api, defaults: { format: :json } do
+  namespace :api, defaults: { format: :json },
+    constraints: { subdomain: 'api' }, path: '/'  do
+     
+      # resources :progams, defaults: {format: :json}
     # We are going to list our resources here
-    resources :users, :only => [:show]
-    
-    
-    
+     resources :users, :only => [:show]
+   
   end
-
- 
-
+    
+    
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
@@ -54,6 +69,7 @@ Rails.application.routes.draw do
   #     resources :comments
   #     resources :sales do
   #       get 'recent', on: :collection
+
   #     end
   #   end
 
@@ -70,4 +86,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+end 

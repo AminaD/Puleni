@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323205336) do
+ActiveRecord::Schema.define(version: 20150328130507) do
 
   create_table "actions", force: true do |t|
     t.string   "name"
@@ -54,7 +54,13 @@ ActiveRecord::Schema.define(version: 20150323205336) do
     t.float    "duration",    limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
     t.integer  "training_id"
+  end
+
+  create_table "exercises_trainings", id: false, force: true do |t|
+    t.integer "exercise_id"
+    t.integer "training_id"
   end
 
   create_table "programs", force: true do |t|
@@ -67,6 +73,9 @@ ActiveRecord::Schema.define(version: 20150323205336) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "training_id"
+    t.integer  "category_id"
+    t.integer  "diet_id"
   end
 
   create_table "roles", force: true do |t|
@@ -86,6 +95,14 @@ ActiveRecord::Schema.define(version: 20150323205336) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "exercise_id"
+    t.integer  "program_id"
+    t.integer  "category_id"
+  end
+
+  create_table "trainings_programs", id: false, force: true do |t|
+    t.integer "training_id"
+    t.integer "program_id"
   end
 
   create_table "users", force: true do |t|
