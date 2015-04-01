@@ -5,12 +5,25 @@ Rails.application.routes.draw do
   get '/programs/:id', to: 'api/programs#show'
   post '/programs/', to: 'api/programs#create'
   put '/programs/:id', to: 'api/programs#update'
-  delete '/programs/', to: 'api/programs#destroy'
+  delete '/programs/:id', to: 'api/programs#destroy'
+  
   get '/trainings/', to: 'api/trainings#index'
   get '/trainings/:id', to: 'api/trainings#show'
   post '/trainings/', to: 'api/trainings#create'
   put '/trainings/:id', to: 'api/trainings#update'
-  delete '/trainings/', to: 'api/trainings#destroy'
+  delete '/trainings/:id', to: 'api/trainings#destroy'
+  
+  get '/categories/', to: 'api/categories#index'
+  get '/categories/:id', to: 'api/categories#show'
+  post '/categories/', to: 'api/categories#create'
+  put '/categories/:id', to: 'api/categories#update'
+  delete '/categories/:id', to: 'api/categories#destroy'
+  
+  get '/actions/', to: 'api/actions#index'
+  get '/actions/:id', to: 'api/actions#show'
+  post '/actions/', to: 'api/actions#create'
+  put '/actions/:id', to: 'api/actions#update'
+  delete '/actions/:id', to: 'api/actions#destroy'
 
 
   
