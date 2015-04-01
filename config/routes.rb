@@ -25,7 +25,17 @@ Rails.application.routes.draw do
   put '/actions/:id', to: 'api/actions#update'
   delete '/actions/:id', to: 'api/actions#destroy'
 
+get '/diets/', to: 'api/diets#index'
+  get '/diets/:id', to: 'api/diets#show'
+  post '/diets/', to: 'api/diets#create'
+  put '/diets/:id', to: 'api/diets#update'
+  delete '/diets/:id', to: 'api/diets#destroy'
 
+get '/exercises/', to: 'api/exercises#index'
+  get '/exercises/:id', to: 'api/exercises#show'
+  post '/exercises/', to: 'api/exercises#create'
+  put '/exercises/:id', to: 'api/exercises#update'
+  delete '/exercises/:id', to: 'api/exercises#destroy'
   
   
 
