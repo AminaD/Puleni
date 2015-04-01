@@ -37,6 +37,18 @@ get '/exercises/', to: 'api/exercises#index'
   put '/exercises/:id', to: 'api/exercises#update'
   delete '/exercises/:id', to: 'api/exercises#destroy'
   
+  get '/comments/', to: 'api/comments#index'
+  get '/comments/:id', to: 'api/comments#show'
+  post '/comments/', to: 'api/comments#create'
+  put '/comments/:id', to: 'api/comments#update'
+  delete '/comments/:id', to: 'api/comments#destroy'
+  
+  get '/roles/', to: 'api/roles#index'
+  get '/roles/:id', to: 'api/roles#show'
+  post '/roles/', to: 'api/roles#create'
+  put '/roles/:id', to: 'api/roles#update'
+  delete '/roles/:id', to: 'api/roles#destroy'
+  
   
 
 

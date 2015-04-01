@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328130507) do
+ActiveRecord::Schema.define(version: 20150401084934) do
 
   create_table "actions", force: true do |t|
     t.string   "name"
@@ -20,10 +20,16 @@ ActiveRecord::Schema.define(version: 20150328130507) do
     t.datetime "updated_at"
   end
 
+  create_table "actions_roles", id: false, force: true do |t|
+    t.integer "role_id",   null: false
+    t.integer "action_id", null: false
+  end
+
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
   create_table "comments", force: true do |t|
@@ -32,6 +38,11 @@ ActiveRecord::Schema.define(version: 20150328130507) do
     t.integer  "ratedBy"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "exercise_id"
+    t.integer  "training_id"
+    t.integer  "program_id"
+    t.integer  "diet_id"
+    t.integer  "user_id"
   end
 
   create_table "diets", force: true do |t|
@@ -58,6 +69,11 @@ ActiveRecord::Schema.define(version: 20150328130507) do
     t.integer  "training_id"
   end
 
+  create_table "exercises_categories", id: false, force: true do |t|
+    t.integer "exercise_id"
+    t.integer "category_id"
+  end
+
   create_table "exercises_trainings", id: false, force: true do |t|
     t.integer "exercise_id"
     t.integer "training_id"
@@ -78,11 +94,26 @@ ActiveRecord::Schema.define(version: 20150328130507) do
     t.integer  "diet_id"
   end
 
+  create_table "programs_categories", id: false, force: true do |t|
+    t.integer "program_id"
+    t.integer "category_id"
+  end
+
+  create_table "programs_users", id: false, force: true do |t|
+    t.integer "user_id",    null: false
+    t.integer "program_id", null: false
+  end
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "roles_users", id: false, force: true do |t|
+    t.integer "user_id", null: false
+    t.integer "role_id", null: false
   end
 
   create_table "trainings", force: true do |t|
@@ -100,6 +131,11 @@ ActiveRecord::Schema.define(version: 20150328130507) do
     t.integer  "category_id"
   end
 
+  create_table "trainings_categories", id: false, force: true do |t|
+    t.integer "training_id"
+    t.integer "category_id"
+  end
+
   create_table "trainings_programs", id: false, force: true do |t|
     t.integer "training_id"
     t.integer "program_id"
@@ -109,6 +145,11 @@ ActiveRecord::Schema.define(version: 20150328130507) do
     t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "surname"
+    t.string   "email"
+    t.string   "password"
+    t.integer  "program_id"
   end
 
 end
