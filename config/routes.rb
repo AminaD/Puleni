@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   
   get 'static_pages/index'
   get '/programs/', to: 'api/programs#index'
+  get '/programs/', to: 'api/programs#index'
+  get '/programs/:id', to: 'api/programs#show'
+  post '/programs/', to: 'api/programs#create'
+  put '/programs/:id', to: 'api/programs#update'
+  delete '/programs/', to: 'api/programs#destroy'
   get '/trainings/', to: 'api/trainings#index'
   get '/trainings/:id', to: 'api/trainings#show'
   post '/trainings/', to: 'api/trainings#create'
