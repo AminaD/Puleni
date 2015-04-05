@@ -1,1 +1,1 @@
-probna = angular.module('probna', []);
+probna = angular.module('probna', ['ngResource']);

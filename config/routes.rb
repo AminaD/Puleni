@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
+  mount_devise_token_auth_for 'User', at: '/auth'
+
+  namespace :api do
+    get 'sessions/new'
+  end
+
   
+  
+  
+  
+  get "log_out" => "api/sessions#destroy", :as => "log_out"
+  get "log_in" => "api/sessions#new", :as => "log_in"
+  get "sign_up" => "api/users#new", :as => "sign_up"
+  
+  #resources :users
+  resources :sessions
+
   get 'static_pages/index'
   get '/programs/', to: 'api/programs#index'
   get '/programs/:id', to: 'api/programs#show'
@@ -49,10 +65,14 @@ get '/exercises/', to: 'api/exercises#index'
   put '/roles/:id', to: 'api/roles#update'
   delete '/roles/:id', to: 'api/roles#destroy'
   
-  
+  get '/users/', to: 'api/users#index'
+  get '/users/:id', to: 'api/users#show'
+  post '/users/', to: 'api/users#create'
+  put '/users/:id', to: 'api/users#update'
+  delete '/users/:id', to: 'api/users#destroy'
 
 
-#OVJDE KUCAMO GET POST PUT DELETE!!!!!!  
+
 
 
   # Add the following line
@@ -92,7 +112,7 @@ get '/exercises/', to: 'api/exercises#index'
      
       # resources :progams, defaults: {format: :json}
     # We are going to list our resources here
-     resources :users, :only => [:show]
+    # resources :users, :only => [:show]
    
   end
     
