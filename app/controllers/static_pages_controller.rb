@@ -7,6 +7,8 @@ class StaticPagesController < ApplicationController
     # @db_name = "c9"
     # client = Mysql::Client.new(:host => @db_host, :username => @db_user, :password => @db_pass, :database => @db_name)
     
+    
+    
     #  ex1 = Exercise.create(name: "jedan", rating: 5)
     #  ex2 = Exercise.create(name: "dva", rating: 5)
     #  ex3 = Exercise.create(name: "tri", rating: 5)
@@ -30,7 +32,8 @@ class StaticPagesController < ApplicationController
     #  pr2.trainings << tr2
     
     
-    @pr=Program.all
+    #@pr=Program.all
+    # user= User.create(username: "hajrudinhajro", name: "hajrudin", surname: "hajrudinović")
 
   end
 end
