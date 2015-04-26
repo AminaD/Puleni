@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'rails-footnotes', '>=3.7.9', :group => :development
 gem 'bootstrap-sass', '~>2.3.1.0'
 
+gem 'protected_attributes'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

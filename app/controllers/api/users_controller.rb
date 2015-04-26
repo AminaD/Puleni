@@ -1,5 +1,8 @@
 class Api::UsersController < ApplicationController
-
+    def new
+      @user=User.new
+    end
+    
     def index
       user=User.all
       render json: user, status: :ok
