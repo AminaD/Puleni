@@ -1,1 +1,1 @@
-{}
+{"filter":false,"title":"angular.js","tooltip":"/app/assets/javascripts/angular.js","undoManager":{"mark":0,"position":-1,"stack":[]},"ace":{"folds":[],"scrolltop":22243,"scrollleft":0,"selection":{"start":{"row":84,"column":24},"end":{"row":84,"column":24},"isBackwards":false},"options":{"guessTabSize":true,"useWrapMode":false,"wrapToView":true},"firstLineState":{"row":1587,"state":"start","mode":"ace/mode/javascript"}},"timestamp":1428325143000,"hash":"20f819d0363f018caa7988c19138604914dc867c"}

@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: '/auth'
-
+mount_devise_token_auth_for 'User', at: '/auth'
+# mount_devise_token_auth_for 'Training', at: '/auth'
+ #mount_devise_token_auth_for 'Action', at: '/auth'
+ #mount_devise_token_auth_for 'Categorie', at: '/auth'
+ #mount_devise_token_auth_for 'Comment', at: '/auth'
+ #mount_devise_token_auth_for 'Diet', at: '/auth'
+ #mount_devise_token_auth_for 'Exercise', at: '/auth'
+ #mount_devise_token_auth_for 'Program', at: '/auth'
+#mount_devise_token_auth_for 'Role', at: '/auth'
+       
   namespace :api do
     get 'sessions/new'
   end
@@ -9,11 +17,11 @@ Rails.application.routes.draw do
   
   
   
-  get "log_out" => "api/sessions#destroy", :as => "log_out"
-  get "log_in" => "api/sessions#new", :as => "log_in"
-  get "sign_up" => "api/users#new", :as => "sign_up"
+  #get "log_out" => "api/sessions#destroy", :as => "log_out"
+  #get "log_in" => "api/sessions#new", :as => "log_in"
+  #get "sign_up" => "api/users#new", :as => "sign_up"
   
-  #resources :users
+  # resources :users
   resources :sessions
 
   get 'static_pages/index'
@@ -77,7 +85,7 @@ get '/exercises/', to: 'api/exercises#index'
 
   # Add the following line
   root 'static_pages#index'
-
+  #root 'api/users#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

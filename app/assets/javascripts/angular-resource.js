@@ -5,7 +5,7 @@
  */
 (function(window, angular, undefined) {'use strict';
 
-var $resourceMinErr = angular.$$minErr('$resource');
+var $resourceMinErr = angular.$$minErr('$resource');   
 
 // Helper functions and regex to lookup a dotted path on an object
 // stopping at undefined/null.  The path must be composed of ASCII

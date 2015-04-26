@@ -1,14 +1,53 @@
 //var visitorCenter = angular.module('VisitorCenter', ['ngResource']);
 
-probna.factory("User",["$resource" ,function($resource) {
-  return $resource("/users/:id", { id: '@id' }, {
-    index:   { method: 'GET', isArray: true, responseType: 'json' },
+// probna.factory("User",["$resource" ,function($resource) {
+//   return $resource("/users/:id", { id: '@id' }, {
+//     index:   { method: 'GET', isArray: true, responseType: 'json' },
     
-    update:  { method: 'PUT', responseType: 'json' }
+//     create: { method: 'POST', responseType: 'json' },
+    
+//     update:  { method: 'PUT', params: {id: '@id'}, responseType: 'json' },
+    
+//     show: { method: 'GET', params: {id: "@id"}, responseType: 'json' },
+    
+//     delete: { method: 'DELETE', params: {id: '@id'}, responseType: 'json' }
+    
+//   });
+// }]);
+
+
+trainings.factory("Training",["$resource" ,function($resource) {
+  return $resource("/trainings/:id", { id: '@id' }, {
+   index:   { method: 'GET', isArray: true, responseType: 'json' },
+    
+    create: { method: 'POST', responseType: 'json' },
+    
+    update:  { method: 'PUT', params: {id: '@id'}, responseType: 'json' },
+    
+    show: { method: 'GET', params: {id: '@id'}, responseType: 'json' },
+    
+    delete: { method: 'DELETE', params: {id: '@id'}, responseType: 'json' }
   });
 }]);
 
-probna.controller('PrviCtrl', ['$scope','$http', 'User',function($scope,$http,User){
+
+
+// probna.factory('User', ['$resource',function($resource){
+//  return $resource('/users.json', {},{
+//  query: { method: 'GET', isArray: true },
+//  create: { method: 'POST' }
+//  })
+// }]);
+ 
+// probna.factory('User', ['$resource', function($resource){
+//  return $resource('/users/:id.json', {}, {
+//  show: { method: 'GET' },
+//  update: { method: 'PUT', params: {id: '@id'} },
+//  delete: { method: 'DELETE', params: {id: '@id'} }
+//  });
+// }]);
+
+trainings.controller('PrviCtrl', ['$scope','$http', 'Training',function($scope,$http,Training){
     $scope.user="jos nema usera";
     $scope.url="jos nema url";
     $scope.id=1;
@@ -16,7 +55,7 @@ probna.controller('PrviCtrl', ['$scope','$http', 'User',function($scope,$http,Us
     $scope.poziv1 = function(){
         $scope.url='click je proso';
         
-        $scope.user = User.query($scope.id);
+        $scope.user = Training.show({id: $scope.id});
         
         
         // $http.get('/api/users/'+id).
@@ -32,7 +71,7 @@ probna.controller('PrviCtrl', ['$scope','$http', 'User',function($scope,$http,Us
         //       alert(data.toSource());   
         // });
      };
-    $scope.poziv2 = function(){
+    $scope.poziv2= function(){
         $http.get('/api/users', {
          	user: $scope.user}).
            success(function(data, status, headers, config) {
@@ -47,3 +86,6 @@ probna.controller('PrviCtrl', ['$scope','$http', 'User',function($scope,$http,Us
 });
     };
 }]);
+
+
+

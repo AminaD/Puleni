@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
      
     #  pr1 = Program.create(name: "alpha", rating: 5)
     #  pr2 = Program.create(name: "beta", rating: 5)
-     
+    
      
     #  tr1.exercises << ex1
     #  tr1.exercises << ex2

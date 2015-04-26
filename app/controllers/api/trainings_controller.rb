@@ -37,8 +37,8 @@ class Api::TrainingsController < ApplicationController
       end
       
       private
-      def training_params
-        params.require(:training).permit(:name, :rating, :description)
-      end
-  end 
+        def training_params
+          params.require(:training).permit(:name, :rating, :description)
+        end
+      end 
   
